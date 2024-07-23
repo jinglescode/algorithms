@@ -4,14 +4,10 @@
  * @return {boolean}
  */
 var containsDuplicate = function (nums) {
-  let hash = {};
-  for (let i in nums) {
-    let n = nums[i];
-    if (n in hash) {
-      return true;
-    } else {
-      hash[n] = true;
-    }
+  const dict = {}
+  for(let n of nums){
+      if(n in dict) return true;
+      else dict[n] = true;
   }
   return false;
 };
